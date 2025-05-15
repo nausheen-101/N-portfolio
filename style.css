@@ -212,3 +212,54 @@ header {
   font-family: 'Segoe UI', cursive;
   z-index: 2;
 }
+ /* Splash Screen */
+.splash-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffe6f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  animation: fadeOut 3s ease-in-out forwards;
+}
+
+.splash-screen h1 {
+  font-size: 2.5rem;
+  color: #d63384;
+  font-family: 'Comic Sans MS', cursive, sans-serif;
+  animation: popUp 2s ease;
+}
+
+@keyframes popUp {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+  90% {
+    opacity: 1;
+    visibility: visible;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    display: none;
+  }
+}
