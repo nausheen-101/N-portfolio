@@ -1,7 +1,7 @@
 /* General Body Styling */
 /* General Styles */
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'comic Sans MS', sans-serif;
   margin: 0;
   padding: 0;
   background: #fff0f5;
@@ -201,8 +201,8 @@ header {
 .site-title {
   position: absolute;
   top: 0.8rem;
-  left: 1rem;
-  font-size: 0.9rem;
+  left: 1;
+  font-size: 1.1rem;
   font-weight: 500;
   color: #d63384;
   background-color: #ffe6f2;
