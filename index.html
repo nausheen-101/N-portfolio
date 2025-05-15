@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -7,80 +6,59 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  <style>
-    /* Paste the complete CSS code I gave in the previous message here */
-  </style>
+  <!-- Three.js and Vanta.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
 </head>
+<!-- Splash Screen -->
+<!-- Splash Screen -->
+<div id="splash-screen">
+  <div id="splash-background"></div>
+  <h1 class="splash-title">Welcome To My Portfolio <3 </h1>
+</div>
 <body>
-  <div class="splash-screen" id="splash">
-    <h1>Welcome to My Portfolio <3 </h1>
-  </div>
-  
-  <div class="sparkle-container" id="sparkleContainer"></div>
-  <div class="site-title">Nausheen's Portfolio:</div>
+  <!-- Vanta Background -->
+  <div id="vanta-bg" style="width: 100%; height: 100vh; position: fixed; top: 0; left: 0; z-index: -1;"></div>  <div class="site-title">Nausheen's Portfolio:</div>
   <header>
     <div class="intro-content">
-      <img src="IMG20250504143624.jpg" alt="Nausheen Parween">
+      <img src="brain key.jpg" alt="Nausheen Parween">
       <h1 class="intro-text"><span class="typed-text"></span></h1>
     </div>
-
-
-
-    
-  </header>
-
-  <div class="nav-buttons">
+  </header>  <div class="nav-buttons">
     <button onclick="toggleSection('about')">About Me</button>
     <button onclick="toggleSection('projects')">Projects</button>
     <button onclick="toggleSection('skills')">Skills</button>
     <button onclick="toggleSection('contact')">Contact</button>
-  </div>
-
-  <!-- About Section -->
-  <div class="toggle-section" id="about" data-aos="fade-up">
+  </div>  <!-- About Section -->  <div class="toggle-section" id="about" data-aos="fade-up">
     <h2>About Me</h2>
     <p>I’m Nausheen Parween, a creative web developer who enjoys building stylish and functional websites.</p>
-  </div>
-
-  <!-- Projects Section -->
-  <div class="toggle-section" id="projects" data-aos="fade-up">
+  </div>  <!-- Projects Section -->  <div class="toggle-section" id="projects" data-aos="fade-up">
     <h2>Projects</h2>
     <div class="project-card">Portfolio Website</div>
     <div class="project-card">Responsive Blog Design</div>
-  </div>
-
-  <!-- Skills Section -->
-  <div class="toggle-section" id="skills" data-aos="fade-up">
+  </div>  <!-- Skills Section -->  <div class="toggle-section" id="skills" data-aos="fade-up">
     <h2>Skills</h2>
     <div class="skills-list">
       <span class="skill-tag">HTML</span>
       <span class="skill-tag">CSS</span>
       <span class="skill-tag">Java</span>
       <span class="skill-tag">Data Structure</span>
-      
     </div>
-  </div>
-
-  <!-- Contact Section -->
-  <div class="toggle-section" id="contact" data-aos="fade-up">
+  </div>  <!-- Contact Section -->  <div class="toggle-section" id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
     <form class="contact-form">
       <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your name">
+      <input type="text" id="name" name="name" required placeholder="Your name"><label for="email">Email</label>
+  <input type="email" id="email" name="email" required placeholder="Your email">
 
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="Your email">
+  <label for="message">Message</label>
+  <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
 
-      <label for="message">Message</label>
-      <textarea id="message" name="message" rows="5" required placeholder="Type your message..."></textarea>
+  <button type="submit">Send Message</button>
+</form>
+<p>Email: nausheenparween88@gmail.com <br>Phone: +91-9931873362</p>
 
-      <button type="submit">Send Message</button>
-    </form>
-    <p>Email: nausheenparween88@gmail.com <br>Phone: +91-9931873362</p>
-  </div>
-
-  <!-- Footer -->
-  <footer class="footer">
+  </div>  <!-- Footer -->  <footer class="footer">
     <p>Connect with me:</p>
     <div class="social-links">
       <a href="https://www.instagram.com/nausheen___v3?igsh=MTk4enB6bTI5MHNqZg==" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -88,12 +66,8 @@
       <a href="https://github.com/nausheen-101" target="_blank"><i class="fab fa-github"></i></a>
     </div>
     <p>&copy; 2025 Nausheen Parween</p>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
+  </footer>  <!-- JavaScript -->  <script>
     const text = "Hey, I'm Nausheen Parween. Web Developer";
-  
     let i = 0;
     const speed = 100;
 
@@ -117,20 +91,57 @@
       section.style.display = section.style.display === 'block' ? 'none' : 'block';
     }
 
-    // Sparkle hearts
-    const container = document.getElementById('sparkleContainer');
-    function createSparkle() {
-      const sparkle = document.createElement('div');
-      sparkle.classList.add('sparkle');
-      sparkle.style.left = Math.random() * 100 + 'vw';
-      sparkle.style.animationDuration = (5 + Math.random() * 5) + 's';
-      container.appendChild(sparkle);
-      setTimeout(() => sparkle.remove(), 10000);
-    }
-    setInterval(createSparkle, 500);
-  </script>
+    // Initialize Vanta.js
+    VANTA.WAVES({
+      el: "#vanta-bg",
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.00,
+      minWidth: 200.00,
+      scale: 1.00,
+      scaleMobile: 1.00,
+      color: 0xffc0cb,
+      shininess: 50.00,
+      waveHeight: 20.00,
+      waveSpeed: 1.00,
+      zoom: 0.85
+    });
 
-  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-  <script>AOS.init();</script>
-</body>
+    
+  </script> 
+   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script> 
+    <script>AOS.init();</script>
+    <!-- Vanta.js 3D background for splash -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+<!-- Vanta WAVES Background for Splash -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+<script>
+  // Apply Vanta.WAVES to splash background
+  VANTA.WAVES({
+    el: "#splash-background",
+    mouseControls: true,
+    touchControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.0,
+    scaleMobile: 1.0,
+    color:0xffc0cb,
+    shininess: 50,
+    waveHeight: 20,
+    waveSpeed: 1,
+    zoom: 1,
+    backgroundColor: 0xffe6f2
+  });
+
+  // Remove splash after fade
+  setTimeout(() => {
+    const splash = document.getElementById('splash-screen');
+    if (splash) splash.remove();
+  }, 5000);
+</script>
+  </body>
+  
 </html>
