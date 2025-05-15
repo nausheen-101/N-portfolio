@@ -198,3 +198,17 @@ header {
   color: #6f42c1;
   transform: scale(1.2);
 }
+.site-title {
+  position: absolute;
+  top: 0.8rem;
+  left: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #d63384;
+  background-color: #ffe6f2;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(255, 182, 193, 0.5);
+  font-family: 'Segoe UI', cursive;
+  z-index: 2;
+}
